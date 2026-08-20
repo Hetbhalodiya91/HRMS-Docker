@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:hrms_test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+    show-sql: false
+
+  mail:
+    host: localhost
+    port: 2525
+    username: test@example.com
+    password: test
+
+app:
+  frontend-url: http://localhost:5173
+  email-verification-expiry: 60
+  password-reset-expiry: 15
+

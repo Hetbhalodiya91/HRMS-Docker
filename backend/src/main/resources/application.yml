@@ -1,0 +1,58 @@
+server:
+  port: 8090
+
+
+
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+#  security:
+#    client:
+#      oauth2:
+#        registration:
+#          google:
+#            client-id: 311058870977-hsfpnpgkbhahoh47r8b58fqiltn9c5h7.apps.googleusercontent.com
+#            client-secret: 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
+#            scope: profile, email
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+
+app:
+  jwt:
+    secret: ${JWT_SECRET}
+    expiration: 86400000
+  frontend-url: ${FRONTEND_URL:http://localhost:3000}
+  email-verification-expiry: 1440
+  password-reset-expiry: 15
+
+logging:
+  level:
+    com.hrms: DEBUG
+    org.springframework.security: DEBUG

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<style>
+  body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 0; }
+  .container { max-width: 600px; margin: 30px auto; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+  .header { background: #1d4ed8; color: white; padding: 30px; text-align: center; }
+  .header h1 { margin: 0; font-size: 24px; }
+  .body { padding: 30px; color: #333; }
+  .btn { display: inline-block; margin: 20px 0; padding: 14px 32px; background: #1d4ed8; color: white; text-decoration: none; border-radius: 6px; font-size: 16px; }
+  .footer { padding: 20px 30px; background: #f9f9f9; color: #888; font-size: 12px; text-align: center; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header"><h1>🏢 HRMS — Verify Your Email</h1></div>
+  <div class="body">
+    <p>Hi <strong th:text="${name}">User</strong>,</p>
+    <p>Thank you for registering! Please verify your email address to activate your account.</p>
+    <p><a class="btn" th:href="${verifyUrl}">Verify Email Address</a></p>
+    <p>If the button doesn't work, copy and paste this link into your browser:</p>
+    <p style="word-break:break-all; color:#1d4ed8;" th:text="${verifyUrl}"></p>
+    <p>This link will expire in 24 hours.</p>
+  </div>
+  <div class="footer">© 2024 HRMS. If you didn't register, please ignore this email.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8">
+<style>
+  body{font-family:Arial,sans-serif;background:#f4f4f4;margin:0;}
+  .container{max-width:600px;margin:30px auto;background:#fff;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1);overflow:hidden;}
+  .header{background:#7c3aed;color:white;padding:30px;text-align:center;}
+  .header h1{margin:0;font-size:24px;}
+  .body{padding:30px;color:#333;}
+  .info-box{background:#f5f3ff;border:1px solid #ddd6fe;padding:16px;border-radius:6px;margin:16px 0;}
+  .btn{display:inline-block;margin:20px 0;padding:12px 24px;background:#7c3aed;color:white;text-decoration:none;border-radius:6px;}
+  .footer{padding:20px 30px;background:#f9f9f9;color:#888;font-size:12px;text-align:center;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header"><h1>👤 New Employee Registered</h1></div>
+  <div class="body">
+    <p>Hi <strong th:text="${adminName}">Admin</strong>,</p>
+    <p>A new employee has registered on HRMS and is awaiting onboarding:</p>
+    <div class="info-box">
+      <strong>Name:</strong> <span th:text="${newUserName}"></span><br>
+      <strong>Email:</strong> <span th:text="${newUserEmail}"></span>
+    </div>
+    <p>You can assign departments and roles from the admin panel.</p>
+    <a class="btn" th:href="${usersUrl}">Manage Users</a>
+  </div>
+  <div class="footer">© 2024 HRMS</div>
+</div>
+</body>
+</html>
